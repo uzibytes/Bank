@@ -5,13 +5,13 @@
 
 struct customer_info
 {
-    long ID_NUMBER;
+    char ID_NUMBER[15];
     char NAME[20];
     char IFSC[15];
     char ADDRESS[70];
-    int MOBILE_NUMBER;
+    char MOBILE_NUMBER[15];
     char DATE_OF_BIRTH[15];
-    int AADHAR_NUMBER;
+    char AADHAR_NUMBER[15];
 
 } d1, e1;
 
@@ -449,19 +449,19 @@ void customer_writting()
     gets(e1.ADDRESS);
     fflush(stdin);
     printf("Enter Customer's Mobile Number : ");
-    scanf("%d", &e1.MOBILE_NUMBER);
+    gets(e1.MOBILE_NUMBER);
     fflush(stdin);
     printf("Enter Customer's IFSC Number : ");
     gets(e1.IFSC);
     fflush(stdin);
     printf("Enter Customer's Aadhar number : ");
-    scanf("%d", &e1.AADHAR_NUMBER);
-    e1.ID_NUMBER = 2342545;
+    gets(e1.AADHAR_NUMBER);
+    strcpy(e1.ID_NUMBER, "7846457684");
 
     fprintf(fp, "Name : ");
     fputs(e1.NAME, fp);
     fputs("\n", fp);
-    fprintf(fp, "ID-NUMBER - %d\n", e1.ID_NUMBER);
+    fprintf(fp, "ID-NUMBER - %s\n", e1.ID_NUMBER);
     fprintf(fp, "IFSC CODE : ");
     fputs(e1.IFSC, fp);
     fprintf(fp, "\n");
@@ -471,8 +471,8 @@ void customer_writting()
     fprintf(fp, "Address : ");
     fputs(e1.ADDRESS, fp);
     fprintf(fp, "\n");
-    fprintf(fp, "Mobile Number : %d\n", e1.MOBILE_NUMBER);
-    fprintf(fp, "Aadhar Number : %d\n", e1.AADHAR_NUMBER);
+    fprintf(fp, "Mobile Number : %s\n", e1.MOBILE_NUMBER);
+    fprintf(fp, "Aadhar Number : %s\n", e1.AADHAR_NUMBER);
 
     fclose(fp);
 };
@@ -515,32 +515,35 @@ part1:
         case 1:
 
             printf("\e[1;H\e[2J");
-            d1.ID_NUMBER = 54624574;
+            strcpy(d1.ID_NUMBER, "7384676767");
             // fflush(stdin);
             strcpy(d1.NAME, "Rajnish Puri");
             strcpy(d1.IFSC, "GDHFE23245");
             strcpy(d1.ADDRESS, "Gobarsahi, Prashan nagar colony, Muzaffarpur, bihar, 843146");
-            d1.MOBILE_NUMBER = 72954459;
+            strcpy(d1.MOBILE_NUMBER, "7683543564");
+            strcpy(d1.AADHAR_NUMBER, "564564434465");
             strcpy(d1.DATE_OF_BIRTH, "15-11-2002");
             printf("                                                                          Customer Information\n");
-            printf("ID-NUMBER : %l\n", d1.ID_NUMBER);
+            printf("ID-NUMBER : %s\n", d1.ID_NUMBER);
             printf("NAME : ");
             puts(d1.NAME);
             printf("IFSC Code : ");
             puts(d1.IFSC);
             printf("ADDRESS : ");
             puts(d1.ADDRESS);
-            printf("MOBILE NUMBER : ", d1.MOBILE_NUMBER);
+            printf("MOBILE NUMBER : %s\n", d1.MOBILE_NUMBER);
             printf("D-O-B : ");
             puts(d1.DATE_OF_BIRTH);
+            printf("AADAHAR NUMBER : %s\n", d1.AADHAR_NUMBER);
             int check, otp;
             printf("press '1' for change Mobile Number : \n");
             scanf("%d", &check);
             if (check == 1)
             {
-                printf("Enter Your mobile number : ");
-                scanf("%l", &d1.MOBILE_NUMBER);
-                printf("Enter the otp : ");
+                printf("Enter Your new mobile number : ");
+                fflush(stdin);
+                gets(d1.MOBILE_NUMBER);
+                printf("Enter the OTP : ");
                 scanf("%d", &otp);
                 if (otp == 123456)
                 {
@@ -549,6 +552,7 @@ part1:
                 else
                 {
                     printf("INVALID OTP\n");
+                    goto raj10;
                 }
             }
             else
