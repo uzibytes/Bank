@@ -2,7 +2,7 @@
 #include <string.h>
 #include <conio.h>
 #include <stdlib.h>
-//added this
+
 struct customer_info
 {
     char ID_NUMBER[15];
@@ -15,7 +15,7 @@ struct customer_info
 
 } d1, e1;
 
-// Edit by Uzi
+// Edit by UziBytes Uncommenting lines
 // struct transection_info
  {
      int year;
