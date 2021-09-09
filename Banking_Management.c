@@ -2,7 +2,7 @@
 #include <string.h>
 #include <conio.h>
 #include <stdlib.h>
-//added
+//added this
 struct customer_info
 {
     char ID_NUMBER[15];
