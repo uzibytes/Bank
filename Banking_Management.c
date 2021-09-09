@@ -14,7 +14,7 @@ struct customer_info
     char AADHAR_NUMBER[15];
 
 } d1, e1;
-
+//adding new comment
 // struct transection_info
 // {
 //     int year;
