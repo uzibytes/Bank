@@ -15,7 +15,7 @@ struct customer_info
 
 } d1, e1;
 
-// Edit by Uzi
+// Edit by UziByte
 // struct transection_info
  {
      int year;
