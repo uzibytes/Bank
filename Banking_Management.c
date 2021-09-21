@@ -15,8 +15,6 @@ struct customer_info
 
 } d1, e1;
 
-// Edit by Uzi
-// struct transection_info
  {
      int year;
      int month;
